@@ -1,0 +1,116 @@
+﻿@model Ads_Post.Models.Admin
+<body class="nav-md">
+
+    <div class="container body">
+
+
+        <div class="main_container">
+
+            @{
+                Html.RenderPartial("Admin/Side_Navigation");
+            }
+
+            <!-- top navigation -->
+            @{
+                Html.RenderPartial("Admin/Top_Navigation");
+            }
+
+            <div class="right_col" role="main">
+                <div class="">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h2>Update Admin Profile</h2>
+                                    <ul class="nav navbar-right panel_toolbox">
+                                        <li>
+                                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                        </li>
+
+                                        <li>
+                                            <a class="close-link"><i class="fa fa-close"></i></a>
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                    <br />
+
+                                    @using (Html.BeginForm("Update_Profile", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                    {
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="avatar-view">
+                                                    <img src="@Url.Content(Model.Image)" alt="Avatar">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="form-horizontal form-label-left">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                                                            Name <span class="required">*</span>
+                                                        </label>
+                                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                                            <input name="name" type="text" required="required" value="@Model.name" class="form-control has-feedback-left col-md-7 col-xs-12">
+                                                            <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
+                                                            Email<span class="required">*</span>
+                                                        </label>
+                                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                                            <input type="text" name="email" required="required" value="@Model.email" class="form-control has-feedback-left col-md-7 col-xs-12">
+                                                            <span class="fa fa-envelope form-control-feedback left" aria-hidden="true"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Contect Number</label>
+                                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                                            <input class="form-control has-feedback-left col-md-7 col-xs-12" value="@Model.contect_number" placeholder="Enter Your Contect Number " type="text" name="con_number">
+                                                            <span class="fa fa-phone form-control-feedback left" aria-hidden="true"></span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Address</label>
+                                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                                            <input name="address" class="has-feedback-left form-control col-md-7 col-xs-12" value="@Model.address" placeholder="Enter Your Address" type="text">
+                                                            <span class="fa fa-home form-control-feedback left" aria-hidden="true"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                                            Image <span class="required">*</span>
+                                                        </label>
+                                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                                            <input type="file" class="form-control has-feedback-left col-md-7 col-xs-12" required="required" name="File">
+                                                            <span class="fa fa-image form-control-feedback left" aria-hidden="true"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ln_solid"></div>
+                                                    <div class="form-group">
+                                                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                                                            <a href="~/Admin/Post_Ad" class="btn btn-primary">Cancel</a>
+                                                            <button type="submit" class="btn btn-success">Submit</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                    }
+                                    
+                                       
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>

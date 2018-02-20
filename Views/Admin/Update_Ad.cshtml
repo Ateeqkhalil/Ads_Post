@@ -1,0 +1,115 @@
+﻿@model Ads_Post.Models.Ad
+<body class="nav-md">
+
+    <div class="container body">
+
+
+        <div class="main_container">
+
+            @{
+                Html.RenderPartial("Admin/Side_Navigation");
+            }
+
+            <!-- top navigation -->
+            @{
+                Html.RenderPartial("Admin/Top_Navigation");
+            }
+
+            <div class="right_col" role="main">
+                <div class="">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h2>Edit Ad</h2>
+                                    <ul class="nav navbar-right panel_toolbox">
+                                        <li>
+                                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                        </li>
+
+                                        <li>
+                                            <a class="close-link"><i class="fa fa-close"></i></a>
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                    <br />
+
+                                    @using (Html.BeginForm("Update_Ad", "Admin", Model.Id, FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                    {
+                                        <div class="row">
+
+                                         <div class="col-md-3">
+                                                <div class="avatar-view">
+                                                    <img src="@Url.Content(Model.image)" alt="Avatar">
+                                                </div>
+                                             <div class="clearfix"></div>
+                                            
+                                            </div>
+                                            
+                                            <div class="col-md-9">
+                                                <div class="form-horizontal form-label-left">
+                                                  
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                                                            Title <span class="required">*</span>
+                                                        </label>
+                                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                                            <input name="title" type="text" required="required" value="@Model.title" class="form-control col-md-7 col-xs-12">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
+                                                            Descritption<span class="required">*</span>
+                                                        </label>
+                                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                                            <input type="text" name="desc" required="required" value="@Model.description" class="form-control col-md-7 col-xs-12">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Post Date</label>
+                                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                                            <input class="form-control col-md-7 col-xs-12" type="" value="@Model.date_of_post.ToString("dd/MMM/yyy")" name="Post_Date">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                                            Date Of Done <span class="required">*</span>
+                                                        </label>
+                                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                                            <input name="Date_Of_Done" class="date-picker form-control col-md-7 col-xs-12" value="@Model.date_of_done.ToString("dd/MMM/yyy")" required="required" type="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                                            Image <span class="required">*</span>
+                                                        </label>
+
+                                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                                            <input type="file" class="form-control col-md-7 col-xs-12" required="required" name="File">
+                                                        </div>
+                                                    </div>
+                                                    <div class="ln_solid"></div>
+                                                    <div class="form-group">
+                                                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                                                            <a href="~/Admin/Post_Ad" class="btn btn-primary">Cancel</a>
+                                                            <button type="submit" class="btn btn-success">Submit</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>

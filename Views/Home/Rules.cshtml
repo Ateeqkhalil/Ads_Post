@@ -1,0 +1,100 @@
+﻿<body>
+    @{
+        Html.RenderPartial("Web/Top_Navigation");
+    }
+    <section class="banner--section">
+        <div class="banner--slider owl-carousel" data-owl-dots="true" data-owl-loop="false">
+            <div class="banner--item bg--overlay" data-bg-img="/Content/User/img/banner-shared-img/slider-bg.jpg">
+                <div class="vc--parent">
+                    <div class="vc--child">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-8 col-md-offset-2">
+                                    <div class="banner--content text-center pt--60 pb--80">
+                                        <div class="title text-uppercase">
+                                            <h1 class="h1">How It's</h1>
+                                            <h2 class="h1"><strong>Work</strong></h2>
+                                        </div>
+
+                                        <div class="action">
+                                            <a href="~/Home/Packages" class="btn btn-lg btn-primary">Our Plans<i class="ml--8 fa fa-check-circle"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq--section pt--80 pb--20">
+        <div class="container">
+            <div class="section--title pb--50 text-center">
+                <h2 class="h1 text-uppercase">Here are some common questions about CloudSky</h2>
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row row--vc-md">
+               
+                <div class="col-md-12 pb--60">
+                    <div class="faq--items panel-group" id="faqItems01" data-scroll-reveal="right">
+                        <div class="faq--item panel"> 
+                            <div class="panel-heading">
+                                <h3 class="h4"> <a href="#faqItems01_1" data-toggle="collapse" data-parent="#faqItems01"> <i class="fa fa-cloud"></i> <span>What is bandwidth and how much do you need?</span> </a> </h3>
+                            </div>
+                            <div id="faqItems01_1" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <p>Consectetur adipisicing elit, sed do eiusmod tempor incunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq--item panel">
+                            <div class="panel-heading">
+                                <h3 class="h4"> <a href="#faqItems01_2" class="collapsed" data-toggle="collapse" data-parent="#faqItems01"> <i class="fa fa-database"></i> <span>What is SSL security?</span> </a> </h3>
+                            </div>
+                            <div id="faqItems01_2" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <p>Consectetur adipisicing elit, sed do eiusmod tempor incunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq--item panel">
+                            <div class="panel-heading">
+                                <h3 class="h4"> <a href="#faqItems01_3" class="collapsed" data-toggle="collapse" data-parent="#faqItems01"> <i class="fa fa-server"></i> <span>What is shared web hosting?</span> </a> </h3>
+                            </div>
+                            <div id="faqItems01_3" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <p>Consectetur adipisicing elit, sed do eiusmod tempor incunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq--item panel">
+                            <div class="panel-heading">
+                                <h3 class="h4"> <a href="#faqItems01_4" class="collapsed" data-toggle="collapse" data-parent="#faqItems01"> <i class="fa fa-lock"></i> <span>Is my website protected from hackers?</span> </a> </h3>
+                            </div>
+                            <div id="faqItems01_4" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <p>Consectetur adipisicing elit, sed do eiusmod tempor incunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    @{
+        Html.RenderPartial("Web/Footer");
+    }
+</body>

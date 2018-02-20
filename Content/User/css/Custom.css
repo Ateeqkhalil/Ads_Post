@@ -1,0 +1,40 @@
+﻿.banner_height{
+    padding-top: 0px; 
+    height: 662px;
+}
+.slider_message{
+    font-weight:500;
+}
+.main_heading{
+    margin-top: 5px;
+}
+
+#nav_a_d a.selected:link, a.selected:visited{
+    display: block;
+    background-color: #066;
+    color: red;
+}
+
+.new_color{
+    color:#ff9a52 !important;
+}
+.new_color_dale{
+    color:#ad7650 !important;
+}
+.new_p{
+     color: #393939;
+     font-size: 15px;
+     font-weight: 600;
+}
+
+.kjkj{
+    color: #ff9a52;
+    background-color: transparent;
+    border-color: #fff;
+}
+}
+
+
+#ff9a52
+#ff5252
+#3498db

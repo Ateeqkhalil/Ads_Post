@@ -1,0 +1,305 @@
+﻿@model List<Ads_Post.Models.Status>
+<body class="nav-md">
+
+    <div class="container body">
+
+
+        <div class="main_container">
+
+            @{
+                Html.RenderPartial("Admin/Side_Navigation");
+            }
+
+            <!-- top navigation -->
+            @{
+                Html.RenderPartial("Admin/Top_Navigation");
+            }
+
+            <div class="right_col" role="main">
+                <div class="">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h2>Status</h2>
+                                    <ul class="nav navbar-right panel_toolbox">
+                                        <li>
+                                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                        </li>
+
+                                        <li>
+                                            <a class="close-link"><i class="fa fa-close"></i></a>
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                    <br />
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <button class="btn btn-dark" data-toggle="modal" data-target="#createstatus">Add New Status</button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="x_panel">
+                                                <div class="x_title">
+                                                    <h2>Status<small>Table</small></h2>
+                                                    <ul class="nav navbar-right panel_toolbox">
+                                                        <li>
+                                                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                                        </li>
+
+                                                        <li>
+                                                            <a class="close-link"><i class="fa fa-close"></i></a>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="x_content">
+
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>#No</th>
+                                                                <th>Status Name</th>
+                                                                <th>Created At</th>
+                                                                <th>Status</th>
+                                                                <th style="width: 20%">Action</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            @{
+                                                                int Count = 1;
+                                                            }
+                                                            @foreach (var item in Model)
+{
+
+
+                                                                <tr>
+                                                                    <th scope="row">@Count</th>
+                                                                    <td>@item.Status1</td>
+                                                                    <td>@item.created_At</td>
+                                                                    @if (@item.is_Active == 1)
+{
+                                                                        <td>
+
+                                                                            <label class="btn-success btn-xs">Active</label>
+                                                                        </td>
+}
+
+                                                                    @if (@item.is_Active != 1)
+                                                                        {
+                                                                        <td class="btn btn-round btn-danger">Active</td>
+                                                                        }
+
+                                                                    <td>
+                                                                        <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+                                                                        <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                                                                    </td>
+
+
+                                                                </tr>
+                                                                Count++;
+                                                            }
+
+
+                                                        </tbody>
+                                                    </table>
+
+                                                </div>
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    @*<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".Status_Edit">Large modal</button>*@
+
+                                    @*<div class="modal fade Status_Edit" tabindex="-1" role="dialog" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+
+                                                    <div class="modal-header bg-blue">
+                                                        <button type="button" class="close" data-dismiss="modal">
+                                                            <span aria-hidden="true">×</span>
+                                                        </button>
+                                                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="row">
+                                                            <div class="col-md-2"></div>
+                                                            <div class="col-md-10">
+                                                                <div class="form-group mt-5 pt--100">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                                                                        Status Name <span class="required">*</span>
+                                                                    </label>
+                                                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                        <input name="status" type="text" required="required" class="form-control col-md-7 col-xs-12">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-2"></div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>*@
+
+
+                                    @*<div class="x_content">
+
+                                            <p>Simple table with project listing with progress and editing options</p>
+
+                                            <!-- start project list -->
+                                            <table class="table table-striped projects">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width: 1%">#No</th>
+                                                        <th style="width: 20%">Status Name</th>
+                                                        <th>Created At</th>
+                                                        <th>Status</th>
+                                                        <th style="width: 20%">Edit</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>#</td>
+                                                        <td></td>
+                                                        <td>
+
+                                                        </td>
+                                                        <td class="project_progress">
+                                                            <div class="progress progress_sm">
+                                                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="57"></div>
+                                                            </div>
+                                                            <small>57% Complete</small>
+                                                        </td>
+                                                        <td>
+                                                            <button type="button" class="btn btn-success btn-xs">Success</button>
+                                                        </td>
+                                                        <td>
+                                                            <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
+                                                            <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+                                                            <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                                                        </td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                            <!-- end project list -->
+
+                                        </div>*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Create Modal -->
+    <div class="modal fade" id="createstatus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-blue">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Create Status</h4>
+                </div>
+
+                @using (Html.BeginForm("Status", "Admin", FormMethod.Post))
+                {
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-10">
+                                <div class="form-group mt-5 pt--100">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                                        Status Name <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input name="status" type="text" required="required" class="form-control col-md-7 col-xs-12">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <a href="~/Admin/Status" class="btn btn-secondary" data-dismiss="modal">Close</a>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                   }
+
+            </div>
+        </div>
+    </div>
+    <!-- Create Modal -->
+    <!-- Update Modal -->
+    <div class="modal fade" id="editstatus" tabindex="-1" role="dialog" aria-labelledby="editstatus" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-blue">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Edit Status</h4>
+                </div>
+
+                @using (Html.BeginForm("Status", "Admin", FormMethod.Post))
+                {
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-10">
+                                <div class="form-group mt-5 pt--100">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                                        Status Name <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input name="status" id="Statusname" type="text" required="required" class="form-control col-md-7 col-xs-12">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <a href="~/Admin/Status" class="btn btn-secondary" data-dismiss="modal">Close</a>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+    <!-- Create Modal -->
+
+
+
+    <script>
+        function editstatuss(x,y) {
+            alert(x, y);
+            $("#Statusname").val(x);
+            $("#statusid").val(y);
+
+        }
+    </script>
+
+
+</body>
+

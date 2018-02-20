@@ -1,0 +1,124 @@
+﻿<body>
+    @{
+        Html.RenderPartial("Web/Top_Navigation");
+    }
+    <section class="banner--section">
+        <div class="banner--slider owl-carousel" data-owl-dots="true" data-owl-loop="false">
+            <div class="banner--item bg--overlay" data-bg-img="/Content/User/img/banner-shared-img/slider-bg.jpg">
+                <div class="vc--parent">
+                    <div class="vc--child">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-8 col-md-offset-2">
+                                    <div class="banner--content text-center pt--60 pb--80">
+                                        <div class="title text-uppercase">
+                                            <h1 class="h1">How It's</h1>
+                                            <h2 class="h1"><strong>Work</strong></h2>
+                                        </div>
+
+                                        <div class="action">
+                                            <a href="~/Home/Packages" class="btn btn-lg btn-primary">Our Plans<i class="ml--8 fa fa-check-circle"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact--section pt--70" data-bg-img="/Content/img/contact-img/bg.png">
+        <div class="container">
+            <div class="section--title pb--50 text-center">
+                <h2 class="h1 text-uppercase">Communication Is Everything</h2>
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row pb--30" data-scroll-reveal="group">
+                <div class="col-xs-4 col-xxs-12 pb--30">
+                    <div class="contact--info-item">
+                        <div class="icon">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                        <div class="title">
+                            <h3 class="h3">24/7 Call Us</h3>
+                        </div>
+                        <div class="info">
+                            <h4 class="h4"><a href="#" class="btn-link">03024507881</a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4 col-xxs-12 pb--30">
+                    <div class="contact--info-item">
+                        <div class="icon">
+                            <i class="fa fa-envelope-open-o"></i>
+                        </div>
+                        <div class="title">
+                            <h3 class="h3">Email Us</h3>
+                        </div>
+                        <div class="info">
+                            <h4 class="h4"><a href="#" class="btn-link"><span class="__cf_email__">Ateeqkhalil@gmail.com</span></a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4 col-xxs-12 pb--30">
+                    <div class="contact--info-item">
+                        <div class="icon">
+                            <i class="fa fa-map-marker"></i>
+                        </div>
+                        <div class="title">
+                            <h3 class="h3">Our Location</h3>
+                        </div>
+                        <div class="info">
+                            <h4 class="h4">896, Shewrapara, Dhaka.</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact--form">
+                <div class="title text-center">
+                    <h2 class="h1 text-uppercase">Get in Touch</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                </div>
+                <form action="http://themelooks.us/demo/cloudsky/html/preview/forms/contact-form.php" data-form="ajax">
+                    <div class="status"></div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <input type="text" name="name" placeholder="Your Name" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Email Address" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <input type="text" name="subject" placeholder="Subject" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <textarea name="message" placeholder="Message" class="form-control" required></textarea>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <button type="submit" class="btn btn-lg btn-block btn-default active">
+                                Send Your Message<i class="ml--8 fa fa-long-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    @{
+        Html.RenderPartial("Web/Footer");
+    }
+</body>

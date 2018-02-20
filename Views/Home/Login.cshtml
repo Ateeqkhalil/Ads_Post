@@ -1,0 +1,79 @@
+﻿<body class="isScrolling">
+
+    @{
+        Html.RenderPartial("Web/Top_Navigation");
+    }
+
+    <!-- Header Section Start -->
+    <div class="header">
+
+
+        <!-- Header Section End -->
+        <!-- Page Header Start -->
+        <div class="page-header" style="background: url(/Content/User/Images/banner3.jpg); height: 230px">
+            
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="breadcrumb-wrapper">
+                            <h2 class="page-title" style="padding-top: 120px;">Login to account</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page Header End -->
+        <!-- Content section Start -->
+        <section id="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-4 col-md-4 col-md-offset-4">
+                        <div class="page-login-form box">
+                            <h3>
+                                Login
+                            </h3>
+                            <form method="post" action="~/Accounts/User_Login" role="form" class="login-form">
+                                <div class="form-group">
+                                    <div class="input-icon">
+                                        <i class="icon fa fa-user"></i>
+                                        <input type="email" id="sender-email" class="form-control" name="email" placeholder="Email" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-icon">
+                                        <i class="icon fa fa-unlock-alt"></i>
+                                        <input type="password" class="form-control" name="password" placeholder="Password" required>
+                                    </div>
+                                </div>
+                                <div class="checkbox">
+                                    <input type="checkbox" id="remember" name="rememberme" value="forever" style="float: left;">
+                                    <label for="remember">Remember me</label>
+                                </div>
+                                <button type="submit" class="btn btn-common log-btn">Submit</button>
+                            </form>
+                            <ul class="form-links">
+                                <li class="pull-left"><a href="~/Home/SignUp">Don't have an account?</a></li>
+                                <li class="pull-right"><a href="~/Home/ForgotPassword">Lost your password?</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Content section End -->
+        <!-- Go To Top Link -->
+        <a href="#" class="back-to-top">
+            <i class="fa fa-angle-up"></i>
+        </a>
+
+        <!-- Main JS  -->
+
+
+
+
+        <script type="text/javascript" src="assets/js/contact-form-script.js"></script>
+        @{
+            Html.RenderPartial("Web/Footer");
+        }
+        </div>
+</body>

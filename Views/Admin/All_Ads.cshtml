@@ -1,0 +1,236 @@
+﻿@model List<Ads_Post.Models.Ad>
+
+<style>
+.zoom{
+      -webkit-transition: all 0.35s ease-in-out;
+        -moz-transition: all 0.35s ease-in-out;
+        transition: all 0.35s ease-in-out;
+        cursor: -webkit-zoom-in;
+        cursor: -moz-zoom-in;
+        cursor: zoom-in;
+    }
+
+        .zoom:hover,
+        .zoom:active,
+        .zoom:focus {
+            
+            -ms-transform: scale(2.5);
+            -moz-transform: scale(2.5);
+            -webkit-transform: scale(2.5);
+            -o-transform: scale(2.5);
+            transform: scale(5.5);
+            position: relative;
+            z-index: 100;
+        }
+
+    
+media only screen and (max-width: 768px) {
+        ul.gallery {
+            margin-left: 15vw;
+            margin-right: 15vw;
+        }
+        .DivName {
+            cursor: pointer;
+        }
+    }
+</style>
+<body class="nav-md">
+
+    <div class="container body">
+
+
+        <div class="main_container">
+
+            @{
+                Html.RenderPartial("Admin/Side_Navigation");
+            }
+
+            <!-- top navigation -->
+            @{
+                Html.RenderPartial("Admin/Top_Navigation");
+            }
+
+
+
+            
+
+
+            <div class="right_col" role="main">
+                @*<div class="row">
+                  
+
+                        <div class="col-sm-4" style="padding-top:30px; padding-bottom:15px">
+
+                            <div class="container">
+
+                                <div class="card" style="background-color:white">
+                                    <img src="@Url.Content(x.image)" alt="John" style="width:100%">
+                                    <h4></h4>
+                                    <p class="title">@x.description</p>
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-4" align="left">
+                                            <h5>Date of Post</h5>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h5></h5>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-4" align="left">
+                                            <h5>Date of Done</h5>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h5></h5>
+                                        </div>
+                                    </div>
+                                    <a href="" class="btn btn-primary">Update</a>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>*@
+
+                    <div class="row">
+
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h2>Recents Ads<small></small></h2>
+                                    <ul class="nav navbar-right panel_toolbox">
+                                        <li>
+                                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                        </li>
+                                       
+                                        <li>
+                                            <a href="#"><i class="fa fa-close"></i></a>
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                    <div class="table-responsive">
+                                        <div class="table">
+                                            <table id="example" class="table table-striped responsive-utilities jambo_table ">
+                                                <thead>
+                                                    <tr class="headings">
+                                                        
+                                                        <th>Title </th>
+                                                        <th>Description </th>
+                                                        <th>Image</th>
+                                                        <th style="width:100px !important">Date of Post </th>
+                                                        <th style="width: 105px !important">Date of Done </th>
+                                                        <th>Status </th>
+                                                        <th class=" no-link last">
+                                                            <span class="nobr">Action</span>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    @foreach (var x in Model)
+                                            {
+                                                        <tr class="even pointer">
+                                                            
+                                                            <td class=" ">@x.title</td>
+                                                            <td class="" style="width:300px">@x.description</td>
+                                                            <td><img class="img-responsive img-rounded zoom" height="80px" width="80px" src="@Url.Content(x.image)" /></td>
+                                                            <td class=" ">@x.date_of_post.ToString("dd/MM/yyyy")</td>
+                                                            <td class=" ">@x.date_of_done.ToString("dd/MM/yyyy")</td>
+                                                            @if (x.is_Active == 1)
+                                                    {
+                                                                <td>
+                                                                    <label class="btn-success btn-xs">Active</label>
+
+                                                                </td>
+                                                    }
+                                                            @if (x.is_Active != 1)
+                                                    {
+                                                                <td>
+                                                                    <label class="btn-dark btn-xs">Deactive</label>
+                                                                </td>
+                                                    }
+                                                            <td class=" last">
+                                                                <a href="~/Admin/Ad_Detail/@x.Id" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
+
+
+                                                            </td>
+                                                        </tr>
+                                            }
+                                                </tbody>
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br />
+                        <br />
+                        <br />
+
+                    </div>
+                
+
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+</body>
+
+<script>
+    $(document).ready(function () {
+        $('input.tableflat').iCheck({
+            checkboxClass: 'icheckbox_flat-green',
+            radioClass: 'iradio_flat-green'
+        });
+    });
+
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#example').dataTable({
+            "oLanguage": {
+                "sSearch": "Search all columns:"
+            },
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [0]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 12,
+            "sPaginationType": "full_numbers",
+            "dom": 'T<"clear">lfrtip',
+            "tableTools": {
+                "sSwfPath": "<?php echo base_url('assets2/js/Datatables/tools/swf/copy_csv_xls_pdf.swf'); ?>"
+            }
+        });
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+    });
+</script>

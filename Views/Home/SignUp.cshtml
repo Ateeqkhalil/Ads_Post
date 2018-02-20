@@ -1,0 +1,123 @@
+﻿<body>
+
+    @{
+        Html.RenderPartial("Web/Top_Navigation");
+    }
+
+    <!-- Header Section Start -->
+    <div class="header">
+
+        
+        <script src="~/Content/jquery.min.js"></script>
+        <!-- Header Section End -->
+        <!-- Page Header Start -->
+        <div class="page-header" style="background: url(/Content/User/Images/banner3.jpg); height: 230px;">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="breadcrumb-wrapper">
+                            <h2 class="page-title" style="padding-top: 120px;">create account</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page Header End -->
+        <!-- Content section Start -->
+        <section id="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-4 col-md-4 col-md-offset-4">
+                        <div class="page-login-form box">
+                            <h3>
+                                Register
+                            </h3>
+                            <form method="post" action="~/Accounts/User_Register" role="form" class="login-form">
+                                <div class="form-group">
+                                    <div class="input-icon">
+                                        <i class="icon fa fa-user"></i>
+                                        <input type="text" id="sender-email" class="form-control" name="name" placeholder="Username" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-icon">
+                                        <i class="icon fa fa-envelope"></i>
+                                        <input type="email" id="sender-email" class="form-control" name="email" placeholder="Email Address" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-icon">
+                                        <i class="icon fa fa-unlock-alt"></i>
+                                        <input type="password" class="form-control" id="password" placeholder="Password" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-icon">
+                                        <i class="icon fa fa-unlock-alt"></i>
+                                        <input type="password" class="form-control" id="confirm_password" name="password" placeholder="Retype Password" required>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+
+                                    <span id='message'></span>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-1">
+                                        <input type="checkbox" id="remember" name="rememberme" required />
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <label for="remember">By creating account you agree to our Terms & Conditions</label>
+
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-common log-btn">Register</button>
+                            </form>
+                            <ul class="form-links">
+                                <li class="pull-left"><a href="~/Home/Login">I have Already Account</a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Content section End -->
+        
+
+        <!-- Main JS  -->
+
+
+
+
+        <script type="text/javascript" src="assets/js/contact-form-script.js"></script>
+        @{
+            Html.RenderPartial("Web/Footer");
+        }
+        </div>
+    <script>
+       
+        //$('#password,#confirm_password').on('change', function () {
+        //    if ($('#password').val() == $('#confirm_password').val()) {
+        //        $('#message').html('<div class="alert alert-success fade in"><strong>Password Matched. </strong></div>');
+        //    } else
+        //        $('#message').html('<div class="alert alert-danger fade in"><strong>Password Not Matched. </strong></div>');
+        //});
+        
+       
+        var password = document.getElementById("password"), confirm_password = document.getElementById("confirm_password");
+
+        function validatePassword() {
+            if (password.value != confirm_password.value) {
+                confirm_password.setCustomValidity("Passwords Don't Match");
+            } else {
+                confirm_password.setCustomValidity('');
+            }
+        }
+
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
+    </script>
+<body>
